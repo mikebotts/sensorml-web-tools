@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created By: Amanda Wyatt and Mike Botts - University of Alabama in Huntsville - 2007-10-28 -->
+<sml:SensorML xmlns:sml="http://www.opengis.net/sensorML/1.0.1"
+	xmlns:swe="http://www.opengis.net/swe/1.0.1" xmlns:gml="http://www.opengis.net/gml"
+	xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:ism="urn:us:gov:ic:ism:v2"
+	xsi:schemaLocation="http://www.opengis.net/sensorML/1.0.1 http://schemas.opengis.net/sensorML/1.0.1/sensorML.xsd"
+	version="1.0.1">
+	<sml:member>
+		<!--==========================================================-->
+		<!--==================Videocamera System======================-->
+		<!--==========================================================-->
+		<sml:System>
+			<gml:description></gml:description>
+			<gml:name></gml:name>
+			<!--==========================================================-->
+			<!--===================System Identifiers=====================-->
+			<!--==========================================================-->
+			<sml:identification>
+				<sml:IdentifierList>
+					<sml:identifier name="ShortName">
+						<sml:Term definition="urn:ogc:def:identifier:OGC:shortName">
+							<sml:value></sml:value>
+						</sml:Term>
+					</sml:identifier>
+					<sml:identifier name="ModelNumber">
+						<sml:Term definition="urn:ogc:def:identifier:OGC:modelNumber">
+							<sml:value></sml:value>
+						</sml:Term>
+					</sml:identifier>
+					<sml:identifier name="ManufacturerName">
+						<sml:Term definition="urn:ogc:def:identifier:OGC:manufacturerName">
+							<sml:value></sml:value>
+						</sml:Term>
+					</sml:identifier>
+					<sml:identifier name="SerialNumber">
+						<sml:Term definition="urn:ogc:def:identifier:OGC:serialNumber">
+							<sml:value></sml:value>
+						</sml:Term>
+					</sml:identifier>
+				</sml:IdentifierList>
+			</sml:identification>
+			<!--==========================================================-->
+			<!--===================System Classifiers=====================-->
+			<!--==========================================================-->
+			<sml:classification>
+				<sml:ClassifierList>
+					<sml:classifier name="Sensor Type">
+						<sml:Term definition="urn:ogc:classifier:sensorType">
+							<sml:codeSpace xlink:href="urn:ogc:classifier:OGC:sensorTypes"/>
+							<sml:value></sml:value>
+						</sml:Term>
+					</sml:classifier>
+					<sml:classifier name="Application">
+						<sml:Term definition="urn:ogc:classifier:OGC:application">
+							<sml:value>surveillance</sml:value>
+						</sml:Term>
+					</sml:classifier>
+					<sml:classifier name="Application">
+						<sml:Term definition="urn:ogc:classifier:OGC:application">
+							<sml:value>weather</sml:value>
+						</sml:Term>
+					</sml:classifier>
+				</sml:ClassifierList>
+			</sml:classification>
+			<!--==========================================================-->
+			<!--===================System Capabilities====================-->
+			<!--==========================================================-->
+			<sml:capabilities name="Optical Properties">
+				<swe:DataRecord definition="urn:ogc:def:property:OGC:1.0:opticalProperties">
+					<swe:field name="Focal Length Range">
+						<swe:QuantityRange definition="urn:ogc:def:property:OGC:1.0:FocalLength">
+							<swe:uom code="mm"/>
+							<swe:value>3.5 91</swe:value>
+						</swe:QuantityRange>
+					</swe:field>
+					<swe:field name="Minimum Lux for IR">
+						<swe:ConditionalValue>
+							<swe:condition name="Spectral Band">
+								<swe:Category definition="urn:ogc:def:property:OGC:1.0:spectralBand">
+									<swe:value>infrared</swe:value>
+								</swe:Category>
+							</swe:condition>
+							<swe:condition name="Fstop">
+								<swe:Quantity definition="urn:ogc:def:property:OGC:1.0:fstop">
+									<swe:value>1.6</swe:value>
+								</swe:Quantity>
+							</swe:condition>
+							<swe:data>
+								<swe:Quantity definition="urn:ogc:def:property:OGC:1.0:minimumLux">
+									<swe:uom code="lx"/>
+									<swe:value>0.1</swe:value>
+								</swe:Quantity>
+							</swe:data>
+						</swe:ConditionalValue>
+					</swe:field>
+					<swe:field name="Minimum Lux for Color">
+						<swe:ConditionalValue>
+							<swe:condition name="Spectral Band">
+								<swe:Category definition="urn:ogc:def:property:OGC:1.0:spectralBand">
+									<swe:value>visible</swe:value>
+								</swe:Category>
+							</swe:condition>
+							<swe:condition name="Fstop">
+								<swe:Quantity definition="urn:ogc:def:property:OGC:1.0:fstop">
+									<swe:value>1.6</swe:value>
+								</swe:Quantity>
+							</swe:condition>
+							<swe:data>
+								<swe:Quantity definition="urn:ogc:def:property:OGC:1.0:minimumLux">
+									<swe:uom code="lx"/>
+									<swe:value>1.0</swe:value>
+								</swe:Quantity>
+							</swe:data>
+						</swe:ConditionalValue>
+					</swe:field>
+					<swe:field name="Optical Zoom Maximum">
+						<swe:Quantity definition="urn:ogc:def:property:OGC:1.0:opticalZoomMax">
+							<swe:value>26</swe:value>
+						</swe:Quantity>
+					</swe:field>
+					<swe:field name="Digital Zoom Maximum">
+						<swe:Quantity definition="urn:ogc:def:property:OGC:1.0:digitalZoomMax">
+							<swe:value>12</swe:value>
+						</swe:Quantity>
+					</swe:field>
+					<swe:field name="Auto Focus">
+						<swe:Boolean definition="urn:ogc:def:property:OGC:1.0:autoFocus">
+							<swe:value>true</swe:value>
+						</swe:Boolean>
+					</swe:field>
+					<swe:field name="Auto Iris">
+						<swe:Boolean definition="urn:ogc:def:property:OGC:1.0:autoIris">
+							<swe:value>true</swe:value>
+						</swe:Boolean>
+					</swe:field>
+					<swe:field name="IR Filter Remove">
+						<swe:Boolean definition="urn:ogc:def:property:OGC:1.0:irFilterRemove">
+							<swe:value>true</swe:value>
+						</swe:Boolean>
+					</swe:field>
+				</swe:DataRecord>
+			</sml:capabilities>
+			<sml:capabilities name="Video Capabilities">
+				<!-- DECIDE HOW TO SUPPORT VIDEO RESOLUTION 176x144 and 576x704 !! -->
+				<swe:DataRecord>
+					<swe:field name="Resolution">
+						<swe:DataRecord>
+							<swe:field name="Horizontal Resolution">
+								<swe:QuantityRange definition="urn:ogc:def:property:OGC:1.0:imageResolutionX">
+									<swe:value>176 704</swe:value>
+								</swe:QuantityRange>
+							</swe:field>
+							<swe:field name="Vertical Resolution">
+								<swe:QuantityRange definition="urn:ogc:def:property:OGC:1.0:imageResolutionY">
+									<swe:value>144 576</swe:value>
+								</swe:QuantityRange>
+							</swe:field>
+						</swe:DataRecord>
+					</swe:field>
+					<!-- IS ALLOWED TOKENS BEST FOR THIS OR MULTIPLE FORMAT ELEMENTS!! -->
+					<swe:field name="Formats">
+						<swe:Category definition="urn:ogc:def:property:OGC:1.0:videoFormat">
+							<swe:constraint>
+								<swe:AllowedTokens>
+									<swe:valueList>motionJPEG MPEG4</swe:valueList>
+								</swe:AllowedTokens>
+							</swe:constraint>
+						</swe:Category>
+					</swe:field>
+				</swe:DataRecord>
+			</sml:capabilities>
+			<sml:capabilities name="Gimbal Capabilities">
+				<swe:DataRecord  definition="urn:ogc:def:property:OGC:1.0:gimbalRanges">
+					<swe:field name="Pan Range">
+						<swe:QuantityRange  definition="urn:ogc:def:property:OGC:1.0:panRange">
+							<swe:uom code="deg"/>
+							<swe:value>-170 +170</swe:value>
+						</swe:QuantityRange>
+					</swe:field>
+					<swe:field name="Tilt Range">
+						<swe:QuantityRange  definition="urn:ogc:def:property:OGC:1.0:tiltRange">
+							<swe:uom code="deg"/>
+							<swe:value>-10 +90</swe:value>
+						</swe:QuantityRange>
+					</swe:field>
+					<swe:field name="Pan Speed">
+						<swe:QuantityRange  definition="urn:ogc:def:property:OGC:1.0:panSpeed">
+							<swe:uom code="deg/s"/>
+							<swe:value>1 90</swe:value>
+						</swe:QuantityRange>
+					</swe:field>
+					<swe:field name="Tilt Speed">
+						<swe:QuantityRange  definition="urn:ogc:def:property:OGC:1.0:tiltSpeed">
+							<swe:uom code="deg/s"/>
+							<swe:value>1 70</swe:value>
+						</swe:QuantityRange>
+					</swe:field>
+				</swe:DataRecord>
+			</sml:capabilities>
+			<!--==========================================================-->
+			<!--===================System Inputs==========================-->
+			<!--==========================================================-->
+			<sml:inputs>
+				<sml:InputList>
+					<sml:input name="Radiance">
+						<swe:ObservableProperty definition="urn:x-ogc:def:property:OGC:radiance">
+							<gml:description>radiance</gml:description>
+						</swe:ObservableProperty>
+					</sml:input>
+				</sml:InputList>
+			</sml:inputs>
+			<!--==========================================================-->
+			<!--===================System Outputs=========================-->
+			<!--==========================================================-->
+			<sml:outputs>
+				<sml:OutputList>
+					<!-- DECIDE HOW TO SUPPORT VIDEO OUTPUT!! -->
+					<sml:output name="Video Frame">
+						<swe:DataRecord>
+							<swe:field name="Time">
+								<swe:Time referenceFrame="#systemClockCRS"/>
+							</swe:field>
+							<!-- <swe:field name="numberRows"/> -->
+							<!-- <swe:field name="numberColumns"/> -->
+							
+						</swe:DataRecord>
+					</sml:output>
+					<sml:output name="Image Settings">
+						<swe:DataRecord>
+							<swe:field name="format"> </swe:field>
+							<swe:field name="resolution"> </swe:field>
+						</swe:DataRecord>
+					</sml:output>
+					<sml:output name="Camera Outputs">
+						<swe:DataRecord>
+							<swe:field name="Time">
+								<swe:Time referenceFrame="#systemClockCRS"/>
+						 	</swe:field>
+							<swe:field name="Zoom Factor">
+								<swe:Quantity/>
+							</swe:field>
+							<swe:field name="Iris Setting">
+								<swe:Quantity/>
+							</swe:field>
+						</swe:DataRecord>
+					</sml:output>
+					<sml:output name="Gimbal Outputs">
+						<swe:Vector localFrame="#cameraCRS" referenceFrame="#systemCRS">
+							<swe:coordinate name="Time">
+								<swe:Time referenceFrame="#systemClockCRS"/>
+							</swe:coordinate>
+							<swe:coordinate name="Tilt Angle">
+								<swe:Quantity>
+									<swe:uom code="deg"/>
+								</swe:Quantity>
+							</swe:coordinate>
+							<swe:coordinate name="Pan Angle">
+								<swe:Quantity>
+									<swe:uom code="deg"/>
+								</swe:Quantity>
+							</swe:coordinate>
+						</swe:Vector>
+					</sml:output>
+				</sml:OutputList>
+			</sml:outputs>
+			<!--==========================================================-->
+			<!--===================Taskable Parameters====================-->
+			<!--==========================================================-->
+			<sml:parameters>
+				<sml:ParameterList>
+					<sml:parameter name="Zoom Factor">
+						<swe:Quantity>
+							<gml:description>Zooms the camera to a designated level.</gml:description>
+							<swe:constraint>
+								<swe:AllowedValues>
+									<swe:interval>1 9999</swe:interval>
+								</swe:AllowedValues>
+							</swe:constraint>
+						</swe:Quantity>
+					</sml:parameter>
+					<sml:parameter name="Tilt">
+						<swe:Quantity>
+							<gml:description>Tilts the camera relative to the (0,0) poistion.</gml:description>
+							<swe:uom code="deg"/>
+							<swe:constraint>
+								<swe:AllowedValues>
+									<swe:interval>-170.0 170.0</swe:interval>
+								</swe:AllowedValues>
+							</swe:constraint>
+						</swe:Quantity>
+					</sml:parameter>
+					<sml:parameter name="Pan">
+						<swe:Quantity>
+							<gml:description>Rotates or pans the camera relative to the (0,0)
+								position.</gml:description>
+							<swe:uom code="deg"/>
+							<swe:constraint>
+								<swe:AllowedValues>
+									<swe:interval>-180.0 180.0</swe:interval>
+								</swe:AllowedValues>
+							</swe:constraint>
+						</swe:Quantity>
+					</sml:parameter>
+					<sml:parameter name="Relative Zoom">
+						<swe:Count>
+							<gml:description>Zooms the camera in relation to the current position.
+								Negative values mean zoom out. Positive values mean zoom in.</gml:description>
+							<swe:constraint>
+								<swe:AllowedValues>
+									<swe:interval>-9999 9999</swe:interval>
+								</swe:AllowedValues>
+							</swe:constraint>
+						</swe:Count>
+					</sml:parameter>
+					<sml:parameter name="Relative Tilt">
+						<swe:Quantity>
+							<gml:description>Tilts the camera a designated number of degrees
+								relative to the current position.</gml:description>
+							<swe:uom code="deg"/>
+							<swe:constraint>
+								<swe:AllowedValues>
+									<swe:interval>-360.0 360.0</swe:interval>
+								</swe:AllowedValues>
+							</swe:constraint>
+						</swe:Quantity>
+					</sml:parameter>
+					<sml:parameter name="Relative Pan">
+						<swe:Quantity>
+							<gml:description>Rotates or pans the camera a designated number of
+								degrees relative to the current position.</gml:description>
+							<swe:uom code="deg"/>
+							<swe:constraint>
+								<swe:AllowedValues>
+									<swe:interval>-360.0 360.0</swe:interval>
+								</swe:AllowedValues>
+							</swe:constraint>
+						</swe:Quantity>
+					</sml:parameter>
+					<sml:parameter name="Rotation Speed">
+						<swe:Count>
+							<gml:description>Sets the head speed of the device that is connected to
+								the specified camera.</gml:description>
+							<swe:constraint>
+								<swe:AllowedValues>
+									<swe:interval>1 100</swe:interval>
+								</swe:AllowedValues>
+							</swe:constraint>
+						</swe:Count>
+					</sml:parameter>
+					<sml:parameter name="Preset Position">
+						<swe:Category>
+							<gml:description>Move to the gimabal position and camera zoom associated with a given
+								value.</gml:description>
+							<swe:constraint>
+								<swe:AllowedTokens>
+									<swe:valueList>
+										<!-- SET VALUES HERE !! -->
+									
+									</swe:valueList>
+								</swe:AllowedTokens>
+							</swe:constraint>							
+						</swe:Category>
+					</sml:parameter>
+					<!--
+					<sml:parameter name="task-start-time">
+						<swe:Time/>
+					</sml:parameter>
+					<sml:parameter name="task-end-time">
+						<swe:Time/>
+					</sml:parameter>
+					-->
+				</sml:ParameterList>
+			</sml:parameters>
+			<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+			<!--~~~~~~~~~~~~~~~~~~Internal System One~~~~~~~~~~~~~~~~~~~~~~-->
+			<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+			<sml:components>
+				<sml:ComponentList>
+					<sml:component name="Camera System" 
+						xlink:href="./Axis213PTZ_camera"/>
+					<sml:component name="Gimbal System" 
+						xlink:href="./Axis213PTZ_gimbal"/>
+					<sml:component name="Clock" 
+						xlink:href="./Axis_clock"/>
+				</sml:ComponentList>
+			</sml:components>
+		</sml:System>
+	</sml:member>
+</sml:SensorML>
