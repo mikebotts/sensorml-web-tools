@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='sml_editor'>
+
+      <inherits name='com.google.gwt.user.User'/>
+      <inherits name='com.google.gwt.xml.XML'/>
+      <inherits name="com.google.gwt.http.HTTP" />
+      <inherits name='com.sensia.RelaxNG'/>
+      
+      <!-- Select theme -->
+      <inherits name='com.google.gwt.user.theme.clean.Clean'/>
+      
+      <!-- Specify the app entry point class. -->
+      <entry-point class='com.sensia.swetools.editors.sensorml.client.SensorMLEditor'/>
+      
+      <!-- Specify the application specific style sheet. -->
+      <stylesheet src='SensorMLEditor.css' />
+      
+      <!-- Specify the paths for translatable code -->
+      <source path='client'/>
+      <source path='shared'/>
+	
+</module>
